@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HABI | Quem Somos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --verde: #21c184;
+            --verde-hover: #1da370;
+            --cinza-texto: #4a4a4a;
+            --cinza-claro: #f5f5f5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: white;
+            color: var(--cinza-texto);
+            margin: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .navbar-brand {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--verde);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--cinza-texto);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus,
+        .nav-link.active {
+            color: var(--verde);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: var(--verde);
+            bottom: -6px;
+            left: 0;
+            border-radius: 5px;
+        }
+
+        .btn-outline-success {
+            border-color: var(--verde);
+            color: var(--verde);
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-success:hover {
+            background-color: var(--verde-hover);
+            border-color: var(--verde-hover);
+            color: white;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--cinza-claro);
+            color: var(--verde);
+        }
+
+        .section-text {
+            font-size: 1rem;
+            color: #444;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Botão flutuante */
+        .chat-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #21c184;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            z-index: 1001;
+            transition: all 0.3s ease;
+        }
+
+        .chat-btn:hover {
+            background-color: #1aa36f;
+        }
+
+        /* Modal overlay */
+        .chat-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        /* Caixa de chat */
+        .chat-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            height: 100%;
+            padding: 2rem;
+        }
+
+        .chat-box {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            max-width: 360px;
+            width: 100%;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        /* Animação de entrada */
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        .chat-avatar {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Habi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Seja Habi
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Seja um contratante</a></li>
+                            <li><a class="dropdown-item" href="#">Seja um colaborador</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="quemsomos.html">Quem Somos</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-outline-success"
+                            href="https://api.whatsapp.com/send/?phone=5532991855045&text=Ol%C3%A1%2C+tudo+bem%3F&type=phone_number&app_absent=0">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Quem Somos -->
+    <section>
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6">
+                    <img src="image3.png" alt="Quem Somos" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title">Quem Somos?</h2>
+                    <p class="section-text">
+                        Somos a HABI, uma empresa focada em conectar pessoas a soluções em manutenção, cuidado e
+                        valorização de imóveis. Acreditamos no poder da confiança e da inovação para transformar o
+                        relacionamento entre profissionais e clientes. Trabalhamos com dedicação para entregar
+                        agilidade, qualidade e segurança em cada serviço.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Como Surgimos -->
+    <section class="bg-white">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="section-title">Como Surgimos?</h2>
+                    <p class="section-text">
+                        A HABI nasceu da necessidade real de otimizar a contratação de serviços residenciais com
+                        confiança e praticidade. Combinamos tecnologia e sensibilidade humana para criar uma plataforma
+                        que conecta moradores a profissionais qualificados de forma simples, rápida e eficaz. Somos
+                        fruto de um propósito: cuidar dos lares como se fossem nossos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://www.thynk.com.br" target="_blank" style="text-decoration: none;">
+        <footer class="footer-fixed text-center py-3 bg-white shadow-sm custom-footer">
+            <div class="container">
+                <small class="text-muted">
+                    Site desenvolvido por <strong style="color: #21c184;">Thynk</strong> | Habi 2025 ©
+                </small>
+            </div>
+        </footer>
+    </a>
+
+    <!-- Botão de Chat -->
+    <button id="chatButton" class="chat-btn shadow-lg">
+        <i class="bi bi-chat-text-fill"></i>
+    </button>
+
+    <!-- Modal/Pop-up -->
+    <div id="chatModal" class="chat-overlay d-none">
+        <div class="chat-container">
+            <div class="chat-box shadow">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="person.jpeg" class="chat-avatar rounded-circle me-2" alt="Habi">
+                    <div>
+                        <strong class="fs-6">Habi</strong><br>
+                        <small class="text-muted">Assistente Virtual</small>
+                    </div>
+                </div>
+                <p id="typingText" class="text-body mb-3" style="min-height: 60px;"></p>
+                <div id="responseButtons" class="d-none d-grid gap-2">
+                    <button class="btn btn-outline-success rounded-pill"
+                        onclick="location.href='sejacontratantehabi.html'">Gostaria de ser Contratante</button>
+                    <button class="btn btn-outline-success rounded-pill"
+                        onclick="location.href='sejacolaboradaorhabi.html'">Gostaria de ser Colaborador</button>
+                    <button class="btn btn-outline-success rounded-pill"
+                        onclick="window.open('https://wa.me/5532991855045?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20retirar%20algumas%20d%C3%BAvidas.', '_blank')">Gostaria
+                        de tirar dúvidas</button>
+                    <button class="btn btn-outline-secondary rounded-pill"
+                        onclick="window.open('https://wa.me/5532991855045?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20um%20assunto%20para%20conversar%20nos%20quais%20n%C3%A3o%20est%C3%A3o%20citados%2C%20podemos%20conversar%3F', '_blank')">Outros</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById("chatButton");
+        const chatModal = document.getElementById("chatModal");
+        const chatBox = document.querySelector(".chat-box");
+        const typingText = document.getElementById("typingText");
+        const responseButtons = document.getElementById("responseButtons");
+
+        const mensagem = "Olá, tudo bem? Me chamo Habi, e estou aqui para garantir a melhor experiência conosco, como posso te ajudar?";
+        let index = 0;
+
+        function mostrarTextoDigitando() {
+            typingText.textContent = "";
+            responseButtons.classList.add("d-none");
+            index = 0;
+
+            const intervalo = setInterval(() => {
+                typingText.textContent += mensagem.charAt(index);
+                index++;
+                if (index >= mensagem.length) {
+                    clearInterval(intervalo);
+                    responseButtons.classList.remove("d-none");
+                }
+            }, 25);
+        }
+
+        chatButton.addEventListener("click", () => {
+            chatModal.classList.remove("d-none");
+            mostrarTextoDigitando();
+        });
+
+        chatModal.addEventListener("click", (e) => {
+            if (!chatBox.contains(e.target)) {
+                chatModal.classList.add("d-none");
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
